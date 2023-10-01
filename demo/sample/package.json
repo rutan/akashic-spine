@@ -1,0 +1,26 @@
+{
+  "name": "akashic-spine-demo-sample",
+  "description": "",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "akashic-sandbox ./game",
+    "build": "run-s build:* scan",
+    "build:ts": "esbuild --bundle src/main.ts --outdir=game/script --format=cjs",
+    "watch": "npm run build:ts -- --watch",
+    "scan": "cd game && akashic scan asset",
+    "downloadAsset": "node ./script/downloadAsset.js"
+  },
+  "dependencies": {
+    "@akashic/akashic-engine": ">=3.0.0",
+    "@rutan/akashic-spine": "../../"
+  },
+  "devDependencies": {
+    "@akashic/akashic-cli": "^2.16.44",
+    "@akashic/akashic-sandbox": "^0.24.5",
+    "@types/node": "^20.8.0",
+    "esbuild": "^0.19.4",
+    "npm-run-all": "^4.1.5",
+    "typescript": "^5.2.2"
+  }
+}

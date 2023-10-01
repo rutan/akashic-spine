@@ -1,0 +1,57 @@
+{
+  "name": "@rutan/akashic-spine",
+  "version": "0.1.0",
+  "description": "Spine Animation for Akashic Engine",
+  "keywords": [
+    "AkashicEngine",
+    "spine"
+  ],
+  "author": "rutan",
+  "license": "MIT",
+  "homepage": "https://github.com/rutan/akashic-spine",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rutan/akashic-spine"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "main": "lib/cjs/index.js",
+  "types": "lib/cjs/index.d.ts",
+  "module": "lib/esm/index.js",
+  "files": [
+    "src/",
+    "lib/",
+    "esm/"
+  ],
+  "scripts": {
+    "build": "run-s clean build:*",
+    "build:cjs": "cross-env NODE_ENV=production tsc -p ./tsconfig.cjs.json",
+    "build:esm": "cross-env NODE_ENV=production tsc -p ./tsconfig.esm.json",
+    "clean": "run-p clean:*",
+    "clean:lib": "rimraf ./lib",
+    "clean:esm": "rimraf ./esm",
+    "watch": "run-p watch:*",
+    "watch:cjs": "tsc -w -p ./tsconfig.cjs.json",
+    "watch:esm": "tsc -w -p ./tsconfig.esm.json",
+    "lint": "run-s lint:*",
+    "lint:prettier": "prettier -c .",
+    "lint:ts": "tsc --noEmit",
+    "format": "prettier -w .",
+    "prepare": "husky install",
+    "precommit": "npm run lint"
+  },
+  "dependencies": {
+    "@akashic/akashic-engine": ">=3.0.0",
+    "@esotericsoftware/spine-core": "^4.2.23"
+  },
+  "devDependencies": {
+    "@types/node": "^20.8.0",
+    "cross-env": "^7.0.3",
+    "husky": "^8.0.3",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^3.0.3",
+    "rimraf": "^5.0.5",
+    "typescript": "^5.2.2"
+  }
+}

@@ -1,0 +1,7 @@
+/node_modules
+/lib
+/tmp
+*.md
+
+/demo/**/*/main.js
+/demo/**/*/game.json

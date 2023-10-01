@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "target": "es6",
+    "rootDir": "./src",
+    "noEmit": true,
+    "lib": ["es6", "dom"],
+    "types": ["@types/node"],
+    "module": "commonjs",
+    "allowUmdGlobalAccess": true,
+    "allowJs": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "isolatedModules": true,
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "strict": true,
+    "skipLibCheck": true
+  },
+  "include": ["src/**/*"],
+  "files": ["./node_modules/@akashic/akashic-engine/index.runtime.d.ts"]
+}
